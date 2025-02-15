@@ -13,6 +13,7 @@
             padding: 20px;
             margin: 0;
             color: #fff;
+            font-size: 0.8rem; /* Use relative units for font size */
         }
         .banner {
             background: linear-gradient(to right, #ff512f, #dd2476);
@@ -22,32 +23,16 @@
             margin-bottom: 20px;
         }
         .banner h1 {
-            font-size: 3em;
+            font-size: 2.5rem; /* Use relative units for font size */
             margin: 0;
         }
         .banner p {
-            font-size: 1.2em;
+            font-size: 1rem; /* Use relative units for font size */
             margin: 10px 0;
             color: #ffeb3b;
             background-color: rgba(0, 0, 0, 0.2);
             padding: 10px;
             border-radius: 5px;
-        }
-        a {
-            padding: 10px 20px;
-            background: linear-gradient(to right, #007bff, #00c6ff); /* Button background gradient */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2em;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */
-        }
-        a:hover {
-            background: linear-gradient(to right, red, orange); /* Hover background gradient */
-            transform: scale(1.1); /* Slightly enlarge the button on hover */
         }
         .highlighted-text {
             color: #ffeb3b;
@@ -57,23 +42,36 @@
             border-radius: 5px;
             display: inline-block;
             margin: 0 5px;
-            font-size: 1.3em;
+            font-size: 1.2rem; /* Use relative units for font size */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .features {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: center; /* Center features on small screens */
         }
         .feature {
             background: #fff;
             color: #333;
             padding: 20px;
             border-radius: 8px;
-            width: 30%;
-            margin: 10px;
+            width: 100%; /* Full width on small screens */
+            margin: 10px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
+            font-size: 12px;
+        }
+        @media (min-width: 600px) {
+            .feature {
+                width: 45%; /* Adjust width for medium screens */
+                margin: 10px;
+            }
+        }
+        @media (min-width: 900px) {
+            .feature {
+                width: 30%; /* Adjust width for large screens */
+                margin: 10px;
+            }
         }
         .feature h3 {
             margin-top: 0;
@@ -100,12 +98,35 @@
             margin: 20px 0;
         }
         .image-container img {
-            max-width: 50%; /* Resize the image */
+            max-width: 100%; /* Full width on small screens */
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
+        @media (min-width: 600px) {
+            .image-container img {
+                max-width: 70%; /* Adjust width for medium screens */
+            }
+        }
+        a {
+            padding: 10px 20px;
+            background: linear-gradient(to right, #007bff, #00c6ff); /* Button background gradient */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+        a:hover {
+            background: linear-gradient(to right, red, orange); /* Hover background gradient */
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
+        }
     </style>
 </head>
 <body>
@@ -115,9 +136,8 @@
         No time wasters here! Make sure you read every instruction carefully on the website before taking any action.</p>
         
         <h2>Secret</h2> 
-        <a href="https://y30b.github.io/-/38S/loadsport.html"><button class="1234">Click to Sign-Up or Sign-In</button></a>
+        <a href="LoadSport.html">Click to Sign-Up or Sign-In</a>
     </div>
-
 
     <div class="image-container">
         <img src="withdrawpic.jpeg" alt="Withdraw Image">
@@ -127,23 +147,23 @@
         <div class="feature">
             <h3>Quick Transactions</h3>
             <p>Experience fast and seamless transactions to get your cards instantly.</p>
-            <a href="https://y30b.github.io/-/38S/loadsport.html"><button class="1234">Click to Sign-Up or Sign-In</button></a>
+            <a href="https://y30b.github.io/-/38S/loadsport.html"> Click to Sign-Up or Sign-In</a>
         </div>
         <div class="feature">
             <h3>Secure Payments</h3>
             <p>We offer secure payment methods to ensure your information is protected.</p>
-            <a href="https://y30b.github.io/-/38S/loadsport.html"><button class="1234">Click to Sign-Up or Sign-In</button></a>
+            <a href="https://y30b.github.io/-/38S/loadsport.html">Click to Sign-Up or Sign-In</a>
         </div>
         <div class="feature">
             <h3>24/7 Support</h3>
             <p>Our customer support is available around the clock to assist you.</p>
-            <a href="https://y30b.github.io/-/38S/loadsport.html"><button class="1234">Click to Sign-Up or Sign-In</button></a>
+            <a href="https://y30b.github.io/-/38S/loadsport.html">Click to Sign-Up or Sign-In</a>
         </div>
         <div class="feature">
             <h3>Account Requirements</h3>
             <p>Ensure your account is at least two years old before attempting any transactions.</p>
             <h2>Thank You</h2>
-            <a href="https://y30b.github.io/-/38S/loadsport.html"><button class="1234">Click to Sign-Up or Sign-In</button></a>
+            <a href="https://y30b.github.io/-/38S/loadsport.html">Click to Sign-Up or Sign-In</a>
         </div>
     </div>
 
