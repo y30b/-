@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Home Page</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+    animation: backgroundAnimation 10s infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: radial-gradient(circle, hotpink, darkblue, black);
+        background-size: 20px 20px;
+    }
+    25% {
+        background: radial-gradient(circle, #ff7e5f, #feb47b, #fffc00);
+        background-size: 40px 40px;
+    }
+    50% {
+        background: radial-gradient(circle, #00c6ff, #0072ff, #00f260);
+        background-size: 30px 30px;
+    }
+    75% {
+        background: radial-gradient(circle, #76b852, #8DC26F, #00c6ff);
+        background-size: 50px 50px;
+    }
+    100% {
+        background: radial-gradient(circle, hotpink, darkblue, black);
+        background-size: 20px 20px;
+    }
+}
+
+        .loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, hotpink, darkblue, black);
+    background-size: 20px 20px;
+    font-size: 2em;
+    color: #fff; /* White text color */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    animation: backgroundAnimation 5s infinite;
+}
+
+.loading-text {
+    display: inline-block;
+    animation: cycleText 3s infinite;
+    background-color: #ffa07a; /* Light salmon background color */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@keyframes cycleText {
+    0%, 33% {
+        content: "· 🤓 · 😎";
+    }
+    34%, 66% {
+        content: "be wise and smart";
+    }
+    67%, 100% {
+        content: "· 🤓 · 😎";
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: radial-gradient(circle, hotpink, darkblue, black);
+    }
+    25% {
+        background: radial-gradient(circle, #00ff7f, #1e90ff, #ff4500); /* Mixed colors */
+    }
+    50% {
+        background: radial-gradient(circle, #fffc00, #00c6ff, #00f260); /* Mixed colors */
+    }
+    75% {
+        background: radial-gradient(circle, #76b852, #8DC26F, #feb47b); /* Mixed colors */
+    }
+    100% {
+        background: radial-gradient(circle, hotpink, darkblue, black);
+    }
+}
+
+
+        }
+        .main-content {
+            display: none;
+            padding: 20px;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: auto;
+        }
+        .nav {
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            font-size: 12px;
+
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .card {
+            width: 300px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        .card-price {
+            font-size: 20px;
+            color: #388e3c;
+            margin: 10px 0;
+        }
+        .card-equation {
+            font-size: 18px;
+            color: #1976d2;
+            margin: 10px 0;
+        }
+        .card-info {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+        }
+        .card-code {
+            font-size: 14px;
+            color: #888;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            word-break: break-all;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: linear-gradient(to right, #ff6e7f, #bfe9ff);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        h1, h2, h3, h4, h5 {
+            color: #007bff;
+            text-align: center;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px auto;
+            width: fit-content;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #3a6186;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .link:hover {
+            background-color: #89253e;
+        }
+        .info {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .info img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .contact {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #007bff;
+        }
+        .contact strong {
+            color: #007bff;
+        }
+        .highlight {
+            color: #007bff;
+            font-weight: bold;
+            background-color: #ffecd2;
+            padding: 2px 4px;
+            border-radius: 5px;
+        }
+        .step {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 5px solid #007bff;
+            background: #e0f7fa;
+        }
+        .email {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .loading-steps {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #ff4500;
+            font-size: 12px;
+            max-width: 400;
+            align-items: center;
+        }
+        .loading-steps h2 {
+            color: #ff4500;
+            font-size: 15;
+        }
+        .loading-steps ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        .loading-steps ol li {
+            margin-bottom: 10px;
+            font-size: 1em;
+            background: linear-gradient(to right, #ffefba, #ffffff);
+            padding: 5px;
+
+        }
+        .copy-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .copy-code {
+            font-family: 'Courier New', Courier, monospace;
+            margin-right: 10px;
+            color: red;
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .copy-button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .copy-button:hover {
+            background-color: red;
+        }
+        /* Dashboard Style */
+        #dashboard {
+            position: absolute;
+            top: 10px;
+            right: 1.3%;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fecfef, #a18cd1, #fbc2eb);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 15%;
+            height: 30%;
+            color: #333;
+            font-size: 11px;
+            border-radius: ;
+        }
+        #dashboard h6 {
+            color: red;
+            font-size: 9px;
+        }
+        #dashboard h7 {
+            color: darkblue;
+        }
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: red;
+        }
+        /* Mobile Optimization */
+        @media (max-width: 868px) {
+            .section .steps .loading-steps {
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
+            #dashboard {
+                position: static;
+                margin: 20px auto;
+                width: 90%;
+            }
+            .nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav a {
+                margin: 5px 0;
+                font-size: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <span class="loading-text">· 🤓 keep it to yourself <br>· 😎 Be wise and smart</span>
+    </div>
+
+    <div class="main-content">
+        <div class="nav">
+            <h1>Welcome to Our Service<br><h3>LOADSPORTS</h3></h1>
+            <button><a href="#account-holder-info">Account Holder Information</a></button><button>
+            <a href="#loading-account-instructions">Loading Account Instructions</a></button><button>
+            <a href="#how-to-buy-card">How to Buy a Card</a></button>
+           
+        </div>
+        
+        <div class="container">
+            <!-- Account Dashboard -->
+            <div id="dashboard" style="display: none;">
+                <h6>Account Dashboard</h6>
+                <div id="dashboard-content"></div>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form" id="login-form">
+                <h3>Login</h3>
+                <form onsubmit="login(event)">
+                    <input type="text" placeholder="Agent Reference Code" id="login-agent-code" required><br>
+                    <input type="password" placeholder="Password" id="login-password" required><br>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="showCreateAccountForm()">Create Account</a></p>
+            </div>
+
+            <!-- Create Account Form -->
+            <div id="create-account-form" style="display: none;">
+                <h3>Create Account</h3>
+                <form onsubmit="createAccount(event)">
+                    <input type="text" placeholder="Full Name" id="create-full-name" required><br>
+                    <input type="text" placeholder="Bet Account" id="create-bet-account" required><br>
+                    <input type="email" placeholder="Email Address" id="create-email" required><br>
+                    <input type="password" placeholder="Password" id="create-password" required><br>
+                    <input type="text" placeholder="Agent Reference Code" id="create-agent-code" required><br>
+                    <button type="submit">Create Account</button>
+                </form>
+                <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+            </div>
+
+            <!-- Main Content -->
+            <div id="main-content" style="display: none;">
+                <div class="section">
+                    <div class="info">
+                        <h2>About Us</h2>
+                        <p>We provide top-notch services to help you easily purchase the cards you need. Our process is quick, secure, and user-friendly.</p>
+                    </div>
+                    <div class="info">
+                        <h2>Why Choose Us?</h2>
+                        <ul>
+                            <li>Quick and Easy Transactions</li>
+                            <li>Secure Payment Methods</li>
+                            <li>Customer Support Available 24/7</li>
+                            <li>Wide Range of Card Options</li>
+                        </ul>
+                         
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">ONLY DEVELOPERS</div>
+                    <div class="card-price">$15</div>
+                    <div class="card-equation">86 * 79 + 56 + 190</div>
+                    <div class="card-info">This card can be used once.<br>DO NOT SHARE CODE</div>
+                    <div class="card-code">94759326495736485</div>
+                </div>
+
+                <div class="section">
+                    <h2 id="account-holder-info">Necessary information to load your account.</h2>
+                    <div class="step">
+                        <p><span class="highlight">1. Logins:</span> Provide your full name on account, number, and password.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">2. Account Age:</span> Your account must be at least 2 years old.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">3. Winning History:</span> You must have a history of winnings in your account.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">4. Risk Factor:</span> There's a 50/50 chance it might not work.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">5. Profit Sharing:</span> If it works, we share the profits 50/50.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">6. Attempts:</span> We may try up to 2 times depending on the strength of your account. Takes 30mins to reflect.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">7. Immediate Withdrawal:</span> Withdraw the money immediately once it enters your account. We will provide an account to send our 50%. If you refuse, your history will be tracked and found.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">8. No Time Wasters:</span> This is for serious individuals only. We don't waste time here.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">9. Repeat:</span> You can repeat the process 3 times when first attempt is confirmed.<br><center>Thank you!</center>
+                        <div class="copy-container">
+                            <span class="copy-code">Agent reference code:  DFG8901234</span><br>
+                            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+                        </div>
+                        <div class="copy-container">
+                            <span class="copy-code">loadsports236@gmail.com</span><br>
+                            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+                        </div></p>
+                    </div>
+                </div>
+                                <div class="section">
+                    <h2 id="how-to-buy-card">How to Buy a Card</h2>
+                    <div class="step">
+                        <p><span class="highlight">1. Get the Agent's Email and Code:</span> Obtain the email <span class="email">loadsports236@gmail.com</span> from any agent and ask for their reference code (e.g., AA25749942). This code is necessary for your payment.</p>
+                    </div>
+                    <p><span class="highlight">2. Send Email:</span> Email "Hi" and the reference code to the provided address. You will receive a response asking which card you want to buy (e.g., SPT card for Sporty, MS card for Msport, BW card for Betway).</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">3. Choose Your Card:</span> Reply with the type of card you want to buy. Make sure it matches the account you have. For example, if you need a house card, type "STP" and send it.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">4. Enter Amount:</span> You will be asked to enter the amount you want ($10, $15, $20, $25, $30). Convert to your country's currency and send. The higher the amount, the more it loads your account. Enter your chosen amount and send it.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">5. Select Payment Method:</span> You will get instructions on how to pay (CashApp, PayPal, Bitcoin, or Mobile Money - MTN and Vodafone Cash only). Choose your preferred method and send it.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">6. Make Payment:</span> You will receive the payment details. Use the agent's reference code when sending money. If you don’t use the code, you won’t get the card. Cards are sold only to those with an agent's reference. Do not send money without a reference code.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">7. Receive Confirmation:</span> After making the payment, you will receive a confirmation email with your card details. Make sure to check your email and spam folder for the confirmation.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">8. Redeem Your Card:</span> Follow the instructions in the confirmation email to redeem your card. If you encounter any issues, contact our support team for assistance.</p>
+                    </div>
+                    <div class="step">
+                        <p><span class="highlight">9. Keep Your Information Safe:</span> Do not share your card details with others. Keep your account credentials and card information secure to prevent unauthorized access.</p>
+                    </div>
+                    
+                
+
+
+                <div class="loading-steps">
+                    <h2 id="loading-account-instructions">Loading Account Instructions</h2>
+                    <ol>
+                        <li>Send "LOAD" to <a href="mailto:loadsports236@gmail.com">loadsportscard@gmail.com</a> to initiate the loading process.</li>
+                        <li>You will receive a reply asking for the following information: your account Full Name, Phone Number, Password, and Card Code.</li>
+                        <li>Enter the information in this order: (Full Name) + (Phone Number) + (Password) = (Card Code) and send it. For example: John Doe + 123-456-7890 + mySecurePassword123 = 9876.</li>
+                        <li>After sending, you will receive a reply with a screenshot showing your information once the system processes it. Make sure everything is typed correctly before sending.</li>
+                        <li>If the account is yours, reply with "555." If it’s not your account, reply with "55."</li>
+                        <li>Once you reply with "555," the system will begin loading your account. You will need to wait about 15 minutes for the process to complete.</li>
+                        <li>After the loading is done, you will need to send us 50% of the amount loaded.</li>
+                        <li>Be aware of the penalty for not sending the 50%.</li>
+                        <div class="copy-container">
+                            <span class="copy-code">Agent reference code: DFG8901234</span><br>
+                            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+                        </div>
+                        <div class="copy-container">
+                            <span class="copy-code">loadsports236@gmail.com</span><br>
+                            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+                        </div>
+                    </ol>
+                    </div>
+                    <p><a href="mailto:loadsports236@gmail.com" class="link">Click Here To Email Us<br>Buy card or <br>load account with card</a></p>
+                
+
+
+    <script>
+        // Predefined agent reference codes
+        const agentReferenceCodes = [
+            "ZRE2345678", "TYU3456789", "VBN4567890", "MLK5678901",
+            "QAS6789012", "WER7890123", "DFG8901234", "HJK9012345",
+            "PLM0123456", "ZXC1234567"
+        ];
+
+        const permanentPassword = 'workhard';
+
+        // Show Create Account Form
+        function showCreateAccountForm() {
+            console.log("Showing create account form");
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('create-account-form').style.display = 'block';
+        }
+
+        // Show Login Form
+        function showLoginForm() {
+            console.log("Showing login form");
+            document.getElementById('create-account-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+
+        // Create Account
+        function createAccount(event) {
+            event.preventDefault();
+            const fullName = document.getElementById('create-full-name').value;
+            const betAccount = document.getElementById('create-bet-account').value;
+            const email = document.getElementById('create-email').value;
+            const password = document.getElementById('create-password').value;
+            const agentCode = document.getElementById('create-agent-code').value;
+
+            if (!agentReferenceCodes.includes(agentCode)) {
+                alert('Invalid agent reference code');
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push({ fullName, betAccount, email, password, agentCode });
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('Account created successfully!');
+            showLoginForm();
+        }
+
+        // Login
+        function login(event) {
+            event.preventDefault();
+            const agentCode = document.getElementById('login-agent-code').value;
+            const password = document.getElementById('login-password').value;
+
+            if (password === permanentPassword) {
+                showDashboard(agentCode);
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(user => user.agentCode === agentCode && user.password === password);
+
+            if (user) {
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+                showDashboard();
+            } else {
+                alert('Invalid agent reference code or password');
+            }
+        }
+
+        // Show Dashboard
+        function showDashboard(agentCode) {
+            const user = JSON.parse(localStorage.getItem('loggedInUser')) || { fullName: 'Admin', betAccount: 'N/A', email: 'N/A', agentCode: agentCode };
+
+            if (user) {
+                console.log(`User ${user.fullName} logged in`);
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('create-account-form').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('main-content').style.display = 'block';
+
+                const dashboardContent = `
+                    <h6>Welcome, ${user.fullName}</h6>
+                    <p>Bet Account: ${user.betAccount}</p>
+                    <p>Email: ${user.email}</p>
+                    <p>Agent Reference Code: ${user.agentCode}</p>
+                    <button onclick="logout()" class="link">Logout</button>
+                `;
+
+                document.getElementById('dashboard-content').innerHTML = dashboardContent;
+            } else {
+                alert('No user is logged in');
+                showLoginForm();
+            }
+        }
+
+        // Logout
+        function logout() {
+            console.log("User logged out");
+            localStorage.removeItem('loggedInUser');
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('main-content').style.display = 'none';
+            showLoginForm();
+        }
+
+        // Check if user is already logged in when the page loads
+        window.onload = function() {
+            if (localStorage.getItem('loggedInUser')) {
+                showDashboard();
+            } else {
+                showLoginForm();
+            }
+
+            // Hide the loading screen after 3 seconds and show the main content
+            setTimeout(() => {
+                document.querySelector('.loading-screen').style.display = 'none';
+                document.querySelector('.main-content').style.display = 'block';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            },2000);
+        }
+
+        // Copy to Clipboard
+        function copyToClipboard(button) {
+            const code = button.previousElementSibling.textContent;
+            const textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                button.textContent = 'Copied';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
